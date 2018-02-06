@@ -1,0 +1,52 @@
+<head>
+</head>
+<body>
+    <h1>Video Info</h1>
+    <form>
+        <div>
+            <label>Select a video</label>
+
+            <!-- 
+                HTML VS Electro about accessing the local drive.
+
+                    - HTML: can get details about files that a user
+                            purposefully feeds into
+                    
+                    - Electron: can read any arbitrary file off 
+                                the machine at any time.
+
+            -->
+
+            <!-- Here it shows an example of HTML 
+                - It will create a default file picker.
+            -->
+            <input type = "file" accept="video/*" />
+        </div>
+        <button type = "submit">Get Info</button>
+    </form>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', (event) => {
+
+            // to prevent submitting the event without the event that clicks button.
+            event.preventDefault();
+
+            // accessing property to file.
+            //      FileList {0: File, length: 1} is behaving as an array.
+            // "files" is a property of the file input. It is an array.
+             const file = document.querySelector('input').files[0];
+            
+            
+            /*
+                ffmpeg
+                ffmpeg-fluent is to parse mpeg informtion in node.
+            */ 
+
+
+            // if the code faces "debugger", it pauses going through the entire file.            
+            // debugger
+            
+
+        });
+    </script>
+</body>
